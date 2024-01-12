@@ -1,0 +1,49 @@
+models:
+
+  Conference:
+    name: string
+    city: string
+    country: string
+    post_code: tinyint
+    relationships:
+      hasMany: Venue, Speaker, Talk
+
+  Venue:
+    conference_id: id
+    name: string
+    description: longtext nullable
+    starting_date: datetime
+    ending_date: datetime
+    state: enum:ended,still_to_do,on_it,failed
+    region: string
+
+  Speaker:
+    conference_id: id
+    name: string
+    email: string
+    biografy: text
+    twitter: string
+    relationships:
+      hasMany: Talk
+
+  Talk: 
+    conference_id: id
+    speaker_id: id
+    title: string
+    description: longtext
+
+controllers:
+
+  Conference:
+    resource: index, show
+
+  Venue:
+    resource: create, store
+
+  Speaker:
+    resource: store
+
+  Talk:
+    resource: index, show
+
+seeders: Conference, Venue, Speaker, Talk

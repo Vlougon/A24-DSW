@@ -1,0 +1,43 @@
+created:
+    - app/Http/Controllers/ConferenceController.php
+    - app/Http/Controllers/VenueController.php
+    - app/Http/Controllers/SpeakerController.php
+    - app/Http/Controllers/TalkController.php
+    - database/factories/ConferenceFactory.php
+    - database/factories/VenueFactory.php
+    - database/factories/SpeakerFactory.php
+    - database/factories/TalkFactory.php
+    - database/migrations/2024_01_12_223322_create_conferences_table.php
+    - database/migrations/2024_01_12_223323_create_venues_table.php
+    - database/migrations/2024_01_12_223324_create_speakers_table.php
+    - database/migrations/2024_01_12_223325_create_talks_table.php
+    - app/Models/Conference.php
+    - app/Models/Venue.php
+    - app/Models/Speaker.php
+    - app/Models/Talk.php
+    - database/seeders/ConferenceSeeder.php
+    - database/seeders/VenueSeeder.php
+    - database/seeders/SpeakerSeeder.php
+    - database/seeders/TalkSeeder.php
+    - tests/Feature/Http/Controllers/ConferenceControllerTest.php
+    - tests/Feature/Http/Controllers/VenueControllerTest.php
+    - tests/Feature/Http/Controllers/SpeakerControllerTest.php
+    - tests/Feature/Http/Controllers/TalkControllerTest.php
+    - app/Http/Requests/VenueStoreRequest.php
+    - app/Http/Requests/SpeakerStoreRequest.php
+    - resources/views/conference/index.blade.php
+    - resources/views/conference/show.blade.php
+    - resources/views/venue/create.blade.php
+    - resources/views/talk/index.blade.php
+    - resources/views/talk/show.blade.php
+updated:
+    - routes/web.php
+models:
+    Comment: {  }
+    User: {  }
+    Video: {  }
+    Watch: {  }
+    Conference: { name: string, city: string, country: string, post_code: tinyint, relationships: { hasMany: 'Venue, Speaker, Talk' } }
+    Venue: { conference_id: id, name: string, description: 'longtext nullable', starting_date: datetime, ending_date: datetime, state: 'enum:ended,still_to_do,on_it,failed', region: string }
+    Speaker: { conference_id: id, name: string, email: string, biografy: text, twitter: string, relationships: { hasMany: Talk } }
+    Talk: { conference_id: id, speaker_id: id, title: string, description: longtext }
