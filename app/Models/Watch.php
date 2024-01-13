@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Watch extends Model
 {
@@ -39,14 +38,4 @@ class Watch extends Model
         'video_id' => 'integer',
         'completed_at' => 'datetime',
     ];
-
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    public function video(): BelongsTo
-    {
-        return $this->belongsTo(Video::class);
-    }
 }
