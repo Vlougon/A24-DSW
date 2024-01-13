@@ -7,10 +7,10 @@ created:
     - database/factories/VenueFactory.php
     - database/factories/SpeakerFactory.php
     - database/factories/TalkFactory.php
-    - database/migrations/2024_01_12_223322_create_conferences_table.php
-    - database/migrations/2024_01_12_223323_create_venues_table.php
-    - database/migrations/2024_01_12_223324_create_speakers_table.php
-    - database/migrations/2024_01_12_223325_create_talks_table.php
+    - database/migrations/2024_01_13_205024_create_conferences_table.php
+    - database/migrations/2024_01_13_205025_create_venues_table.php
+    - database/migrations/2024_01_13_205026_create_speakers_table.php
+    - database/migrations/2024_01_13_205027_create_talks_table.php
     - app/Models/Conference.php
     - app/Models/Venue.php
     - app/Models/Speaker.php

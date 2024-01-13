@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Watch extends Model
 {
@@ -40,16 +39,6 @@ class Watch extends Model
         'video_id' => 'integer',
         'completed_at' => 'datetime',
     ];
-
-    public function users(): BelongsToMany
-    {
-        return $this->belongsToMany(User::class);
-    }
-
-    public function videos(): BelongsToMany
-    {
-        return $this->belongsToMany(Video::class);
-    }
 
     public function user(): BelongsTo
     {
